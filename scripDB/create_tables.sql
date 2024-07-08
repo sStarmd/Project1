@@ -2,7 +2,7 @@
 CREATE TABLE Usuarios (
     Id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nombre_completo VARCHAR(200) NOT NULL,
-    contraseña VARCHAR(50) NOT NULL,
+    contraseña VARCHAR(250) NOT NULL,
     correo VARCHAR(100) NOT NULL UNIQUE,
     perfil ENUM('director', 'instructor', 'seladores', 'otros') NOT NULL,
     fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
