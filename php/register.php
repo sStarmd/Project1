@@ -1,18 +1,26 @@
 <?php
-require_once('../Controllers/UsuarioController.php');
+require_once '../Controllers/UsuarioController.php';
 
 $controller = new UsuarioController();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre_completo = $_POST['nombre_completo'];
     $correo = $_POST['correo'];
-    $contraseña = password_hash($_POST['contraseña'], PASSWORD_DEFAULT); // Encriptar la contraseña
-    $perfil = $_POST['perfil'];
+    $contraseña = $_POST['contraseña'];
+    $id_perfil = $_POST['perfil'];
 
-    if ($controller->registrarUsuario($nombre_completo, $correo, $contraseña, $perfil)) {
-        echo "Registro exitoso.";
+    $resultado = $controller->registrarUsuario($nombre_completo, $correo, $contraseña, $id_perfil);
+
+    if ($resultado) {
+        echo "<script>
+                alert('Registro exitoso. Será redirigido al inicio de sesión.');
+                window.location.href = '../index.php';
+              </script>";
     } else {
-        echo "Error al registrar.";
+        echo "<script>
+                alert('Error al registrar el usuario. Inténtelo de nuevo.');
+                window.history.back();
+              </script>";
     }
 }
 ?>

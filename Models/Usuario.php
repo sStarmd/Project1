@@ -1,15 +1,15 @@
 <?php
 class Usuario {
     private $conn;
-    private $table_name = "Usuarios";
+    private $table_name = "usuarios";
 
     public $id_usuario;
     public $nombre_completo;
     public $correo;
     public $contraseña;
-    public $perfil;
     public $fecha_registro;
     public $estado_cuenta;
+    public $id_perfil;
 
     public function __construct($db) {
         $this->conn = $db;
@@ -17,32 +17,25 @@ class Usuario {
 
     public function registrar() {
         $query = "INSERT INTO " . $this->table_name . " 
-                  (nombre_completo, correo, contraseña, perfil) 
+                  (nombre_completo, correo, contraseña, id_perfil) 
                   VALUES (?, ?, ?, ?)";
 
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("ssss", $this->nombre_completo, $this->correo, $this->contraseña, $this->perfil);
+        $stmt->bind_param("sssi", $this->nombre_completo, $this->correo, $this->contraseña, $this->id_perfil);
 
-        if ($stmt->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        return $stmt->execute();
     }
 
     public function iniciarSesion() {
-        $query = "SELECT * FROM " . $this->table_name . " WHERE correo = ? LIMIT 1";
+        $query = "SELECT u.*, p.nombre_perfil FROM " . $this->table_name . " u 
+                  JOIN perfiles p ON u.id_perfil = p.id_perfil 
+                  WHERE correo = ? LIMIT 1";
 
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("s", $this->correo);
         $stmt->execute();
-        $result = $stmt->get_result();
 
-        if ($result->num_rows == 1) {
-            return $result->fetch_assoc();
-        } else {
-            return null;
-        }
+        return $stmt->get_result()->fetch_assoc();
     }
 }
 ?>

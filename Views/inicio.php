@@ -39,10 +39,10 @@
                         <i class="bx bx-group"></i>
                         Perfil
                         <select id="perfil" name="perfil" required>
-                          <option value="director">Director</option>
-                          <option value="instructor">Instructor</option>
-                          <option value="seladores">Seladores</option>
-                          <option value="otros">Otros</option>
+                          <option value="1">Director</option>
+                          <option value="2">Instructor</option>
+                          <option value="3">Seladores</option>
+                          <option value="4">Otros</option>
                       </select>
                     </label>
                     <input type="submit" value="Registrarse" />
@@ -54,7 +54,7 @@
         <div class="information">
             <div class="info-childs">
                 <h2>¡Hola nuevamente!</h2>
-                <p>Para iniciar seccion necesitas tener una cuenta.</p>
+                <p>Para iniciar sesión necesitas tener una cuenta.</p>
                 <input type="button" value="Registrarse" id="sign-up" />
             </div>
         </div>
@@ -70,7 +70,7 @@
                         <i class="bx bx-lock-open"></i>
                         <input type="password" placeholder="Contraseña" id="contraseña" name="contraseña" required />
                     </label>
-                    <input type="submit" value="Iniciar Sesión"/>
+                    <input type="submit" value="Iniciar Sesión" />
                 </form>
             </div>
         </div>

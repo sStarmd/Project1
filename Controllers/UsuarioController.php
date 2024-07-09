@@ -1,40 +1,38 @@
 <?php
-require_once('../config/Database.php');
-require_once('../models/Usuario.php');
+require_once '../config/Database.php';
+require_once '../models/Usuario.php';
 
 class UsuarioController {
-    private $usuario;
     private $db;
+    private $usuario;
 
     public function __construct() {
-        $this->db = Database::getInstance(); // Obtener instancia de la clase Database
-        $this->usuario = new Usuario($this->db->getConnection()); // Pasar la conexión MySQLi al modelo Usuario
+        $database = new Database();
+        $this->db = $database->getConnection();
+        $this->usuario = new Usuario($this->db);
     }
 
-    public function registrarUsuario($nombre_completo, $correo, $contraseña, $perfil) {
+    public function registrarUsuario($nombre_completo, $correo, $contraseña, $id_perfil) {
         $this->usuario->nombre_completo = $nombre_completo;
         $this->usuario->correo = $correo;
-        $this->usuario->contraseña = $contraseña;
-        $this->usuario->perfil = $perfil;
+        $this->usuario->contraseña = password_hash($contraseña, PASSWORD_BCRYPT);
+        $this->usuario->id_perfil = $id_perfil;
 
-        if ($this->usuario->registrar()) {
-            return true; // Registro exitoso
-        } else {
-            return false; // Error al registrar usuario
-        }
+        return $this->usuario->registrar();
     }
 
-    public function iniciarSesionUsuario($correo, $contraseña) {
+    public function iniciarSesion($correo, $contraseña) {
         $this->usuario->correo = $correo;
+        $datosUsuario = $this->usuario->iniciarSesion();
 
-        $usuario = $this->usuario->iniciarSesion();
-
-        if ($usuario && password_verify($contraseña, $usuario['contraseña'])) {
-            // Iniciar sesión exitoso
-            return $usuario;
+        if ($datosUsuario && password_verify($contraseña, $datosUsuario['contraseña'])) {
+            session_start();
+            $_SESSION['id'] = $datosUsuario['Id_usuario'];
+            $_SESSION['nombre_completo'] = $datosUsuario['nombre_completo'];
+            $_SESSION['perfil'] = $datosUsuario['nombre_perfil'];
+            return true;
         } else {
-            // Error al iniciar sesión
-            return null;
+            return false;
         }
     }
 }
