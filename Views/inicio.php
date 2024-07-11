@@ -41,7 +41,7 @@
                         <select id="perfil" name="perfil" required>
                           <option value="1">Director</option>
                           <option value="2">Instructor</option>
-                          <option value="3">Seladores</option>
+                          <option value="3">Guardas</option>
                           <option value="4">Otros</option>
                       </select>
                     </label>

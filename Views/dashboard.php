@@ -1,11 +1,12 @@
 <?php
 session_start();
 
-// Verificar si no hay sesión iniciada, redirigir a inicio.php
+// Verificar si hay sesión iniciada
 if (!isset($_SESSION['id'])) {
-    header("Location: ../Views/inicio.php");
+    header("Location: ../index.php");
     exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -19,5 +20,6 @@ if (!isset($_SESSION['id'])) {
     <h1>Bienvenido, <?php echo $_SESSION['nombre_completo']; ?>!</h1>
     <p>Perfil: <?php echo $_SESSION['perfil']; ?></p>
     <a href="../php/logout.php">Cerrar sesión</a>
+    <a href="../Views/registro_entrada.php">Registrar nueva entrada</a>
 </body>
 </html>
