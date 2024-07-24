@@ -33,6 +33,7 @@
     background-color: #D4EBCE;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    position: relative;
 }
 
 .info-childs {
@@ -163,6 +164,7 @@
         border-top-right-radius: 20px;
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0;
+        
     }
 
     .form-information {

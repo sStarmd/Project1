@@ -18,7 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: ../Views/dashboard.php");
         exit();
     } else {
-        echo "Error al iniciar sesión.";
+        $_SESSION['error'] = "Error al iniciar sesión. Por favor,<br> verifica tu correo y contraseña.";
+        header("Location: ../Views/inicio.php");
+        exit();
     }
 }
 ?>

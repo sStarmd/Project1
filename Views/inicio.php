@@ -1,3 +1,9 @@
+<?php
+session_start();
+$error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
+unset($_SESSION['error']);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +17,36 @@
     <title>Iniciar Sesión</title>
 </head>
 <body>
-    <div class="container-form register">
+<div class="fondo"></div>
+    <div class="container-form login">
+        <div class="information">
+            <div class="info-childs">
+                <h2>¡Hola nuevamente!</h2>
+                <p>Para iniciar sesión necesitas tener una cuenta.</p>
+                <input type="button" value="Registrarse" id="sign-up" />
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>Iniciar Sesión</h2>
+                <form action="../php/login.php" class="form form-login" method="post">
+                    <label for="correo">
+                        <i class="bx bx-envelope"></i>
+                        <input type="email" placeholder="Correo Electrónico" id="correo" name="correo" required />
+                    </label>
+                    <label for="contraseña">
+                        <i class="bx bx-lock-open"></i>
+                        <input type="password" placeholder="Contraseña" id="contraseña" name="contraseña" required />
+                    </label>
+                    <input type="submit" value="Iniciar Sesión" />
+                    <?php if ($error): ?>
+                    <div class="error-message"><?php echo $error; ?></div>
+                <?php endif; ?>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container-form register hide">
         <div class="information">
             <div class="info-childs">
                 <h2>Bienvenidos</h2>
@@ -46,31 +81,6 @@
                       </select>
                     </label>
                     <input type="submit" value="Registrarse" />
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="container-form login hide">
-        <div class="information">
-            <div class="info-childs">
-                <h2>¡Hola nuevamente!</h2>
-                <p>Para iniciar sesión necesitas tener una cuenta.</p>
-                <input type="button" value="Registrarse" id="sign-up" />
-            </div>
-        </div>
-        <div class="form-information">
-            <div class="form-information-childs">
-                <h2>Iniciar Sesión</h2>
-                <form action="../php/login.php" class="form form-login" method="post">
-                    <label for="correo">
-                        <i class="bx bx-envelope"></i>
-                        <input type="email" placeholder="Correo Electrónico" id="correo" name="correo" required />
-                    </label>
-                    <label for="contraseña">
-                        <i class="bx bx-lock-open"></i>
-                        <input type="password" placeholder="Contraseña" id="contraseña" name="contraseña" required />
-                    </label>
-                    <input type="submit" value="Iniciar Sesión" />
                 </form>
             </div>
         </div>

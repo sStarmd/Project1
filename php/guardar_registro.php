@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre_completo_sale = $_POST['nombre_completo_sale'];
     $id_ambiente = $_POST['ambiente'];
     $novedades = $_POST['novedades'];
+    $id_perfil = $_POST['id_perfil']; // Agregar esta línea
     $id_usuario = $_SESSION['id'];
 
     // Crear una instancia de la clase Database
@@ -22,8 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verificar la conexión
     if ($conn) {
-        $stmt = $conn->prepare("INSERT INTO registro_entrada (nombre_completo_entra, nombre_completo_sale, id_ambiente, novedades, id_usuario) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssisi", $nombre_completo_entra, $nombre_completo_sale, $id_ambiente, $novedades, $id_usuario);
+        $stmt = $conn->prepare("INSERT INTO registro_entrada (nombre_completo_entra, nombre_completo_sale, id_ambiente, novedades, id_usuario, id_perfil) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssisis", $nombre_completo_entra, $nombre_completo_sale, $id_ambiente, $novedades, $id_usuario, $id_perfil);
 
         if ($stmt->execute()) {
             echo "<script>

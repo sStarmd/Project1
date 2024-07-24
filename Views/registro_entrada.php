@@ -1,3 +1,52 @@
+<?php
+session_start();
+
+// Verificar si hay una sesión iniciada
+if (!isset($_SESSION['nombre_completo'])) {
+    header("Location: ../Views/index.php");
+    exit;
+}
+
+$nombre_usuario = $_SESSION['nombre_completo']; // Obtén el nombre del usuario desde la sesión
+
+// Conexión a la base de datos
+require_once '../config/Database.php'; // Asegúrate de que la ruta sea correcta
+$db = new Database();
+$conn = $db->getConnection();
+
+// Consulta para obtener los ambientes disponibles
+$query = "SELECT Id_ambiente, nombre_ambiente FROM ambientes WHERE disponible = 1";
+$result = $conn->query($query);
+
+$ambientes = [];
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $ambientes[] = $row;
+    }
+} else {
+    echo "Error al obtener los ambientes: " . $conn->error;
+}
+
+
+require_once '../config/Database.php';
+
+// Obtener el perfil del usuario
+$db = new Database();
+$conn = $db->getConnection();
+$id_usuario = $_SESSION['id'];
+
+$query = "SELECT id_perfil FROM usuarios WHERE id_usuario = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("i", $id_usuario);
+$stmt->execute();
+$stmt->bind_result($id_perfil);
+$stmt->fetch();
+$stmt->close();
+$conn->close();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,6 +77,8 @@
                           type="text"
                           id="nombre_completo_entra"
                           name="nombre_completo_entra"
+                          value="<?php echo htmlspecialchars($nombre_usuario); ?>" 
+                          readonly 
                           required
                         />
                     </label>
@@ -39,6 +90,7 @@
                           type="text"
                           id="nombre_completo_sale"
                           name="nombre_completo_sale"
+                         
                         />
                     </label>
 
@@ -46,9 +98,11 @@
                         <i class="bx bxs-school"></i>
                         Ambiente
                         <select id="ambiente" name="ambiente" required>
-                          <option value="1">Sala de reuniones</option>
-                          <option value="2">Aula 1</option>
-                          <option value="3">Aula 2</option>
+                          <?php foreach ($ambientes as $ambiente): ?>
+                              <option value="<?php echo $ambiente['Id_ambiente']; ?>">
+                                  <?php echo htmlspecialchars($ambiente['nombre_ambiente']); ?>
+                              </option>
+                          <?php endforeach; ?>
                         </select>
                     </label>
 
@@ -61,6 +115,7 @@
                           name="novedades"
                         />
                     </label>
+                    <input type="hidden" name="id_perfil" value="<?php echo htmlspecialchars($id_perfil); ?>">
 
                     <input type="submit" value="Registrar Entrada">
                 </form>

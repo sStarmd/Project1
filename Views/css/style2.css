@@ -1,0 +1,158 @@
+/* Estilo general */
+/* Estilo general */
+body {
+    font-family:'Times New Roman', Times, serif ;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D4EBCE;
+    padding: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add drop shadow */
+
+    
+}
+.bienvenida {
+    text-align: right;
+}
+
+h1 {
+    margin: 0;
+    text-align: center; /* Centrar el título principal */
+       
+    color: #333;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que el contenido se ajuste */
+    justify-content: flex-start; /* Alinear el contenido al inicio */
+    overflow: hidden; /* Ocultar el contenido que se desborde */
+}
+
+.seccion-izquierda,
+.seccion-derecha {
+    flex: 1; /* Ajusta el tamaño de las secciones */
+    padding: 20px;
+    margin: 0; /* Eliminar márgenes si es necesario */
+    box-sizing: border-box; /* Incluir márgenes y bordes en el ancho y alto */
+    overflow-x: hidden; /* Ocultar el desplazamiento horizontal */
+    display: flex; /* Convertir las secciones en contenedores flex */
+    flex-direction: column; /* Alinear el contenido en columna */
+    align-items: center; /* Centrar el contenido horizontalmente */
+    text-align: center; /* Centrar el contenido verticalmente */
+    
+}
+.seccion-izquierda{
+    font-size: 50px;
+}
+
+/* Estilos responsivos para pantallas pequeñas (celulares) */
+@media (max-width: 890px) {
+    main {
+        flex-direction: column; /* Las secciones se apilan una sobre otra */
+    }
+
+    .seccion-izquierda,
+    .seccion-derecha {
+        width: 100%; /* Cada sección ocupa todo el ancho */
+        overflow-x: auto; /* Habilitar scroll horizontal si es necesario */
+        font-size: 25px;
+    }
+}
+
+
+
+.logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.boton {
+    display: inline-block;
+    background-color: #9191bd;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; 
+    align-items: center;
+    font-size: 25px;
+  }
+  .boton2 {
+    display: inline-block;
+    background-color: #9191bd;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; 
+    align-items: center;
+   
+  }
+  
+  .boton:hover {
+    background-color: #000000;
+  }
+  
+
+  span {
+    font-size: 25px;
+    padding: 10px;
+  }
+
+  .ambiente {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    cursor: pointer;
+}
+.ocupado {
+    background-color: red;
+    color: white;
+}
+.libre {
+    background-color: green;
+    color: white;
+}
+
+
+.container .btn-float .btn{
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-color: #b62727;
+    padding: 15px 25px;
+    border-radius: 20px;
+    color: #fff;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    transition: all 0.3s ease 0s;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    z-index: 99;
+
+    
+}
+
+.container .btn-float .btn:hover{
+    color: #000000;
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.5);
+	transform: translateY(-7px);
+}
