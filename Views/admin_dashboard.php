@@ -45,8 +45,11 @@ while ($row = $result->fetch_assoc()) {
         <a href="admin_logout.php" class="logout-button">Cerrar sesión</a>
     </header>
 
-    <h2>Ambientes</h2>
-    <a href="admin_add_ambiente.php">Agregar Ambiente</a>
+    
+    <div class="btn-2">
+        <h2>Ambientes</h2>
+        <a  href="admin_add_ambiente.php">Agregar Ambiente</a>
+    </div>
     <table>
         <tr>
             <th>ID</th>
@@ -60,8 +63,8 @@ while ($row = $result->fetch_assoc()) {
             <td><?php echo $ambiente['nombre_ambiente']; ?></td>
             <td><?php echo $ambiente['disponible'] ? 'Sí' : 'No'; ?></td>
             <td>
-                <a href="admin_edit_ambiente.php?id=<?php echo $ambiente['Id_ambiente']; ?>">Editar</a>
-                <a href="admin_delete_ambiente.php?id=<?php echo $ambiente['Id_ambiente']; ?>">Eliminar</a>
+                <a class="btn-edit" href="admin_edit_ambiente.php?id=<?php echo $ambiente['Id_ambiente']; ?>">Editar</a>
+                <a class="btn-delete"   href="admin_delete_ambiente.php?id=<?php echo $ambiente['Id_ambiente']; ?>">Eliminar</a>
             </td>
         </tr>
         <?php endforeach; ?>
@@ -85,8 +88,8 @@ while ($row = $result->fetch_assoc()) {
             <td><?php echo $registro['id_ambiente']; ?></td>
             <td><?php echo $registro['novedades']; ?></td>
             <td>
-                <a href="admin_edit_registro.php?id=<?php echo $registro['id_registro']; ?>">Editar</a>
-                <a href="admin_delete_registro.php?id=<?php echo $registro['id_registro']; ?>">Eliminar</a>
+                <a class="btn-edit"  href="admin_edit_registro.php?id=<?php echo $registro['id_registro']; ?>">Editar</a>
+                <a class="btn-delete"  href="admin_delete_registro.php?id=<?php echo $registro['id_registro']; ?>">Eliminar</a>
             </td>
         </tr>
         <?php endforeach; ?>
