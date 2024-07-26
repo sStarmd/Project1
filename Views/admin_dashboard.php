@@ -33,11 +33,17 @@ while ($row = $result->fetch_assoc()) {
 <head>
     <meta charset="UTF-8">
     <title>Panel de Administración</title>
-    <link rel="stylesheet" href="css/style3.css">
+    <link rel="stylesheet" href="css/admin-dashboard.css">
 </head>
 <body>
-    <h1>Panel de Administración</h1>
-    <a href="admin_logout.php">Cerrar sesión</a>
+
+     <header class="admin-header">
+        <div class="logo">
+            <img src="img/logoSena.png" alt="Logo">
+        </div>
+        <h1>Panel de Administración</h1>
+        <a href="admin_logout.php" class="logout-button">Cerrar sesión</a>
+    </header>
 
     <h2>Ambientes</h2>
     <a href="admin_add_ambiente.php">Agregar Ambiente</a>
@@ -85,5 +91,32 @@ while ($row = $result->fetch_assoc()) {
         </tr>
         <?php endforeach; ?>
     </table>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="img/logoSena.png" alt="Logo SENA">
+                </div>
+                <div class="footer-links">
+                    <a href="https://www.sena.edu.co/es-co/Paginas/default.aspx" target="_blank">Inicio</a>
+                    <a href="https://www.sena.edu.co/es-co/ciudadano/Paginas/default.aspx" target="_blank">Ciudadano</a>
+                    <a href="https://www.sena.edu.co/es-co/empresarios/Paginas/default.aspx" target="_blank">Empresarios</a>
+                    <a href="https://www.sena.edu.co/es-co/centros/Paginas/default.aspx" target="_blank">Centros</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/SENAColombia" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/SENAComunica" target="_blank">Twitter</a>
+                    <a href="https://www.instagram.com/senacomunica/" target="_blank">Instagram</a>
+                </div>
+                <div class="footer-contact">
+                    <p>&copy; 2024 SENA. Todos los derechos reservados.</p>
+                    <p>Dirección General SENA: Calle 57 No. 8-69, Bogotá D.C., Colombia</p>
+                    <p>Teléfono: (57 1) 5461500</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
 </body>
 </html>
