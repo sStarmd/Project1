@@ -29,16 +29,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Agregar Ambiente</title>
-    <link rel="stylesheet" href="css/style3.css">
+    <link rel="stylesheet" href="css/admin-add-ambiente.css">
 </head>
 <body>
-    <h1>Agregar Ambiente</h1>
-    <form method="post" action="admin_add_ambiente.php">
-        <label for="nombre">Nombre del Ambiente:</label>
-        <input type="text" id="nombre" name="nombre" required>
-        <label for="disponible">Disponible:</label>
-        <input type="checkbox" id="disponible" name="disponible">
-        <button type="submit">Agregar</button>
-    </form>
+    <div class="container-form">
+        <div class="information">
+            <div class="info-childs">
+                <h2>Información del Ambiente</h2>
+                <p>Ingrese los detalles del nuevo ambiente en el formulario.</p>
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>Agregar Ambiente</h2>
+                <form method="post" action="admin_add_ambiente.php">
+                    <div class="form">
+                        <label  for="nombre">
+                            <i class="fas fa-building"></i>
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre del Ambiente" required>
+                        </label>
+                        <label class="input-2" for="disponible">
+                            Disponible
+                            <input type="checkbox" id="disponible" name="disponible">
+                        </label>
+                    </div>
+                    <div class="btn">
+                        <input type="submit" value="Agregar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
