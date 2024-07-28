@@ -17,14 +17,12 @@ $result = $conn->query($query);
 $ambientes = $result->fetch_all(MYSQLI_ASSOC);
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantilla Responsiva con Header</title>
+    <title>Estado de Ambientes</title>
     <link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
@@ -50,8 +48,12 @@ $ambientes = $result->fetch_all(MYSQLI_ASSOC);
                 
 
         <section class="seccion-derecha">
-            <h2>Ambientes disponibles:</h2>
+            <h2>Estados de Ambientes:</h2>
             <div class="box-ambiente">
+                <div class="on-off">
+                    <span class="on"> Disponible</span>
+                    <span class="off"> Ocupado</span>
+                </div>
                 <div id="ambientes">
                     <?php foreach ($ambientes as $ambiente): ?>
                         <div 

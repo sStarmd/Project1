@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </label>
                     <div class="btn">
                         <input type="submit" value="Login">
-                        <a href="/Views/index.php">Volver al Inicio</a>
+                        <a href="/project1/index.php">Volver al Inicio</a>
                     </div>
                 </form>
             </div>
