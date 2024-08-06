@@ -31,15 +31,15 @@ $ambientes = $result->fetch_all(MYSQLI_ASSOC);
         <div class="logo"> 
             <img src="img/logoSena.png" alt="Logo"> 
         </div>
-        <div class="bienvenida">
-            <span><?php echo $_SESSION['perfil']; ?></span>
-            <a href="../php/logout.php" class="boton2">Cerrar sesión</a>
+        <div class="header-btn">
+            <a class="header-btn_help" href="" target="_blank"><i class="fab fa-github"></i>AYUDA!</a>
+            <a class="header-btn_logout" href="../php/logout.php">CERRAR SESION</a>
         </div>
     </header>
 
     <main>
         <section class="seccion-izquierda">
-            <h1>Bienvenid@, <?php echo $_SESSION['nombre_completo']; ?>.</h1>
+            <h1>Bienvenid@,<span><?php echo $_SESSION['perfil']; ?></span> <?php echo $_SESSION['nombre_completo']; ?>.</h1>
             <div class="btn-1">
                 <a href="registro_entrada.php" class="boton">Registrar nueva entrada</a> 
                 <a href="descargar_pdf.php" class="boton">Ver resultados de la semana</a>
@@ -66,16 +66,10 @@ $ambientes = $result->fetch_all(MYSQLI_ASSOC);
                     <?php endforeach; ?>
                 </div>
             </div>
-           
-            <div class="container">
-                <div class="btn-float">
-                    <a href="https://wa.me/1234567890?text=¡Alerta%20de%20Emergencia%21%20Se%20ha%20activado%20una%20alerta%20de%20emergencia%20en%20el%20sistema%2E" target="_blank" class="btn"><i class="fab fa-github"></i>AYUDA!</a>
-                </div>
-            </div>
         </section>
     </main>
 
-    <!-- <footer> -->
+    <!-- <footer>
     <footer>
         <div class="footer-container">
             <div class="footer-content">
@@ -100,7 +94,7 @@ $ambientes = $result->fetch_all(MYSQLI_ASSOC);
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <script>
         function toggleAmbiente(id) {
             fetch('../php/toggle_ambiente.php', {

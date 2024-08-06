@@ -7,11 +7,10 @@ body {
 }
 
 header {
-  
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(255, 255, 255);
+    background-color: #D4EBCE;;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2); 
 }
 
@@ -21,15 +20,44 @@ header {
     height: 100px;
 }
 
-.bienvenida a{
+.header-btn_help{
+    background-color: #9191bd;
+    margin: 20px;
+    padding: 20px 25px;
     font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
     border-radius: 10px;
-    box-shadow: 0 0 8px 0 #9191bd;
+    box-shadow: 0 0 20px 0 #6a6ab4;
+    transition: 0.5s;
+    transition-property: background-color, font-size;
+    transition-property: all;
+}
+.header-btn_help:hover{
+    background-color: #6a6ab4;
+    font-size: 17px;
 }
 
-.bienvenida a:hover{
-    background-color: #6a6ab4;
+.header-btn_logout {
+    background-color: #8e8c8c;
+    margin: 20px;
+    padding: 20px 25px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 #8e8c8c;
+    transition: 0.5s;
+    transition-property: background-color, font-size;
+    transition-property: all;
 }
+.header-btn_logout:hover{
+    background-color: #636363;
+    font-size: 17px;
+}
+
 
 .bienvenida span{
     background-color: #9191bd;
@@ -68,7 +96,7 @@ main {
     text-align: center; /* Centrar el contenido verticalmente */
     
 }
-.seccion-izquierda {
+.seccion-izquierda span {
     font-size: 50px;
 }
 
@@ -151,7 +179,7 @@ span {
     border: 1px solid #ccc;
     display: inline-block;
     cursor: pointer;
-    border-radius: 10px; 
+    border-radius: 40px; 
 }
 
 .seccion-derecha h2{
@@ -162,7 +190,7 @@ span {
 .box-ambiente{
     width: 600px;
     border: 1px solid #a4a4c2;
-    border-radius: 10px;
+    border-radius: 40px;
     box-shadow: 0 0 5px 0 #a4a4c2;
 }
 
@@ -185,7 +213,6 @@ span {
 }
 .on:hover{
     background-color: #c5ebbc;
-
 }
 
 .off{
@@ -207,7 +234,7 @@ span {
 .ocupado {
     background-color: #9191bd;
     color: white;
-    border-radius: 10px; 
+    border-radius: 40px; 
     padding: 15px;
     box-shadow: 0 0 5px 0 #9191bd;
     transition-duration: 0.7s;
@@ -215,11 +242,12 @@ span {
 }
 .ocupado:hover{
     background-color: #6a6ab4;
+    border-radius: 40px;
 }
 .libre {
     background-color: #D4EBCE;
     color: rgb(4, 4, 4);
-    border-radius: 10px; 
+    border-radius: 40px; 
     padding: 15px;
     box-shadow: 0 0 5px 0 #a3bba1;
     transition-duration: 0.7s;
@@ -229,30 +257,6 @@ span {
     background-color: #b0d7ac;
 }
 
-
-.container .btn-float .btn{
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    background-color: #7dc873; 
-    padding: 15px 25px;
-    border-radius: 40px;
-    color: #fff;
-    position: fixed;
-    right: 20px;
-    bottom: 30px;
-    transition: all 0.3s ease 0s;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
-    z-index: 99;
-}
-
-.container .btn-float .btn:hover{
-    color: #000000;
-	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.5);
-	transform: translateY(-7px);
-    background-color: #58dc4a; 
-
-}
 
 footer {
     background-color: #333;
