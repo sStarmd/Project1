@@ -38,8 +38,9 @@ $ambientes = $result->fetch_all(MYSQLI_ASSOC);
     </header>
 
     <main>
-        <section class="seccion-izquierda">
-            <h1>Bienvenid@,<span><?php echo $_SESSION['perfil']; ?></span> <?php echo $_SESSION['nombre_completo']; ?>.</h1>
+    <section class="seccion-izquierda">
+            <h1>Bienvenid@, <?php echo $_SESSION['nombre_completo'];?>.</h1>
+            <h1>Perfil: <?php echo $_SESSION['perfil'];?>.</h1>
             <div class="btn-1">
                 <a href="registro_entrada.php" class="boton">Registrar nueva entrada</a> 
                 <a href="descargar_pdf.php" class="boton">Ver resultados de la semana</a>
