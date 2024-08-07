@@ -36,7 +36,6 @@ header {
 }
 .header-btn_help:hover{
     background-color: #6a6ab4;
-    font-size: 17px;
 }
 
 .header-btn_logout {
@@ -55,9 +54,34 @@ header {
 }
 .header-btn_logout:hover{
     background-color: #636363;
-    font-size: 17px;
+   
 }
 
+@media (max-width: 575px) {
+    .header-btn_help{
+        font-size: 10px;
+        margin: 0;
+        
+    }
+    .header-btn_logout {
+        font-size: 10px;
+        margin: 0;
+        
+    }
+}
+
+@media (max-width: 400px) {
+    .header-btn_help{
+        font-size: 5px;
+        margin: 0;
+        
+    }
+    .header-btn_logout {
+        font-size: 5px;
+        margin: 0;
+        
+    }
+}
 
 .bienvenida span{
     background-color: #9191bd;
@@ -89,7 +113,6 @@ main {
     padding: 20px;
     margin: 0; /* Eliminar márgenes si es necesario */
     box-sizing: border-box; /* Incluir márgenes y bordes en el ancho y alto */
-    overflow-x: hidden; /* Ocultar el desplazamiento horizontal */
     display: flex; /* Convertir las secciones en contenedores flex */
     flex-direction: column; /* Alinear el contenido en columna */
     align-items: center; /* Centrar el contenido horizontalmente */
@@ -105,7 +128,7 @@ main {
 }
 
 .btn-1 a{
-    border-radius: 10px;
+    border-radius: 40px;
     border: 1px solid #6a6ab4;
     box-shadow: 0 0 15px 0 #6a6ab4;
     transition-duration: 1s;
@@ -128,7 +151,7 @@ main {
     .seccion-derecha {
         width: 100%; /* Cada sección ocupa todo el ancho */
         overflow-x: auto; /* Habilitar scroll horizontal si es necesario */
-        font-size: 25px;
+        
     }
 }
 
@@ -188,7 +211,6 @@ span {
 }
 
 .box-ambiente{
-    width: 600px;
     border: 1px solid #a4a4c2;
     border-radius: 40px;
     box-shadow: 0 0 5px 0 #a4a4c2;

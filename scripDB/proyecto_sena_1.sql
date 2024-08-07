@@ -38,10 +38,33 @@ CREATE TABLE `ambientes` (
 --
 
 INSERT INTO `ambientes` (`Id_ambiente`, `nombre_ambiente`, `disponible`) VALUES
-(1, 'Sala de Reuniones', 1),
-(2, 'Aula 1', 0),
-(3, 'Aula 2', 0),
-(4, '102', 1);
+(1, '101', 0),
+(2, '102', 0),
+(3, '103', 0),
+(4, '104', 1),
+(5, '105', 0),
+(6, '106', 0),
+(7, '107', 0),
+(8, '108', 0),
+(9, 'Poli 1', 1),
+(10, 'Poli 2', 0),
+(11, 'Poli 3', 0),
+(12, 'Bosch', 0),
+(13, 'Ajedrez', 1),
+(14, 'Auditorio', 1),
+(15, 'Biblioteca', 0),
+(16, 'Automatizacion', 0),
+(17, 'Salon de musica', 0),
+(18, 'Sala de profesores', 0),
+(19, 'Hotel practico', 0),
+(20, 'Zona deportiva', 0),
+(21, 'Trabajo en alturas', 1),
+(22, 'Ambiente temporal', 0),
+(23, 'Alcoholes Artesanales', 1),
+(24, 'Salon quimica', 0),
+(25, 'Bodega de deportes', 0),
+(26, 'Aula movil', 1);
+
 
 -- --------------------------------------------------------
 

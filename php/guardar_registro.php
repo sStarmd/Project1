@@ -25,23 +25,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn) {
         $stmt = $conn->prepare("INSERT INTO registro_entrada (nombre_completo_entra, nombre_completo_sale, id_ambiente, novedades, id_usuario, id_perfil) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssisis", $nombre_completo_entra, $nombre_completo_sale, $id_ambiente, $novedades, $id_usuario, $id_perfil);
-
+    
         if ($stmt->execute()) {
+            echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
             echo "<script>
-                    alert('Registro de entrada exitoso.');
-                    window.location.href = '../Views/dashboard.php';
+                    window.onload = function() {
+                        Swal.fire({
+                            title: '¡Éxito!',
+                            text: 'Registro de entrada exitoso.',
+                            icon: 'success',
+                            confirmButtonText: 'Aceptar'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = '../Views/dashboard.php';
+                            }
+                        });
+                    };
                   </script>";
         } else {
+            echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
             echo "<script>
-                    alert('Error al registrar la entrada.');
-                    window.location.href = '../Views/dashboard.php';
+                    window.onload = function() {
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'Error al registrar la entrada.',
+                            icon: 'error',
+                            confirmButtonText: 'Aceptar'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = '../Views/dashboard.php';
+                            }
+                        });
+                    };
                   </script>";
         }
-
+    
         $stmt->close();
         $conn->close();
     } else {
-        die("Error de conexión: " . $db->getConnectionError());
+        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+        echo "<script>
+                window.onload = function() {
+                    Swal.fire({
+                        title: 'Error de conexión',
+                        text: 'No se pudo conectar a la base de datos.',
+                        icon: 'error',
+                        confirmButtonText: 'Aceptar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '../Views/dashboard.php';
+                        }
+                    });
+                };
+              </script>";
     }
+    
 }
 ?>

@@ -22,8 +22,9 @@ $ambientes = $result->fetch_all(MYSQLI_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estado de Ambientes</title>
+    <title>Control de Ambientes</title>
     <link rel="stylesheet" href="css/style2.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -32,7 +33,7 @@ $ambientes = $result->fetch_all(MYSQLI_ASSOC);
             <img src="img/logoSena.png" alt="Logo"> 
         </div>
         <div class="header-btn">
-            <a class="header-btn_help" href="" target="_blank"><i class="fab fa-github"></i>AYUDA!</a>
+            <a class="header-btn_help" href="" target="_blank"><i class="fab fa-github"></i>¡EMERGENCIA!</a>
             <a class="header-btn_logout" href="../php/logout.php">CERRAR SESION</a>
         </div>
     </header>
@@ -43,7 +44,7 @@ $ambientes = $result->fetch_all(MYSQLI_ASSOC);
             <h1>Perfil: <?php echo $_SESSION['perfil'];?>.</h1>
             <div class="btn-1">
                 <a href="registro_entrada.php" class="boton">Registrar nueva entrada</a> 
-                <a href="descargar_pdf.php" class="boton">Ver resultados de la semana</a>
+                <a href="descargar_pdf.php" class="boton">Resultados de la semana</a>
             </div>
          </section>
                 
