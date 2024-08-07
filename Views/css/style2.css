@@ -132,12 +132,11 @@ main {
     border: 1px solid #6a6ab4;
     box-shadow: 0 0 15px 0 #6a6ab4;
     transition-duration: 1s;
-    transition-property: border, font-size, box-shadow;
+    transition-property: border, box-shadow;
 }
 
 .btn-1 a:hover{
     background-color: #6a6ab4;
-    font-size: 28px;
     box-shadow: 0 0 32px 0 #5656b7;
 }
 

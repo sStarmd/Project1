@@ -45,7 +45,14 @@ while ($row = $result->fetch_assoc()) {
         <a href="admin_logout.php" class="logout-button">Cerrar sesión</a>
     </header>
 
-    
+
+
+<!-- Agrega este botón en tu admin_dashboard.php -->
+<div class="btn-2">
+    <a href="../php/export_excel.php" class="btn">Descargar Historial de Registros</a>
+</div> <br>
+
+
     <div class="btn-2">
         <h2>Ambientes</h2>
         <a  href="admin_add_ambiente.php">Agregar Ambiente</a>
@@ -70,6 +77,8 @@ while ($row = $result->fetch_assoc()) {
         <?php endforeach; ?>
     </table>
 
+  
+<!-- 
     <h2>Registros de Entrada</h2>
     <table>
         <tr>
@@ -93,7 +102,7 @@ while ($row = $result->fetch_assoc()) {
             </td>
         </tr>
         <?php endforeach; ?>
-    </table>
+    </table> -->
 
     <footer>
         <div class="footer-container">
@@ -113,9 +122,9 @@ while ($row = $result->fetch_assoc()) {
                     <a href="https://www.instagram.com/senacomunica/" target="_blank">Instagram</a>
                 </div>
                 <div class="footer-contact">
-                    <p>&copy; 2024 SENA. Todos los derechos reservados.</p>
-                    <p>Dirección General SENA: Calle 57 No. 8-69, Bogotá D.C., Colombia</p>
-                    <p>Teléfono: (57 1) 5461500</p>
+                    <p>Cl. 2 #13 - 3, Villeta, Cundinamarca
+                    SENA, CDAE Villeta, dirección</p>
+                    <p>Teléfono: </p>
                 </div>
             </div>
         </div>

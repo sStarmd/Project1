@@ -50,12 +50,12 @@ header img{
    transition: background-color 0.3s ease;
    transition-property: font-size;
 }
-
+/* 
 .logout-button:hover {
    background-color: #D4EBCE;
    color: #333;
    font-size: 18px;
-}
+} */
 
 
 h1, h2 {
@@ -88,6 +88,7 @@ h1, h2 {
    background-color: #b7d9ac;
    color: #333;
 }
+
 
 table {
    width: 100%;
