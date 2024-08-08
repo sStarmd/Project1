@@ -53,14 +53,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <h2>Inicia sesion como Administrador</h2>
                 <form method="post" action="admin_login.php" class="form">
                     <?php if (isset($error)) echo "<p>$error</p>"; ?>
-                    <label for="correo">Email:
+                    <label for="correo">Correo:
                         <input type="email" id="correo" name="correo" required>
                     </label>
                     <label for="contraseña"> Contraseña:
                         <input type="password" id="contraseña" name="contraseña" required>
                     </label>
                     <div class="btn">
-                        <input type="submit" value="Login">
+                        <input type="submit" value="Entrar">
                         <a href="inicio.php">Volver al Inicio</a>
                     </div>
                 </form>

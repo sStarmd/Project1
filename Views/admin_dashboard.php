@@ -46,8 +46,7 @@ while ($row = $result->fetch_assoc()) {
     </header>
 
 
-
-<!-- Agrega este botón en tu admin_dashboard.php -->
+<br>
 <div class="btn-2">
     <a href="../php/export_excel.php" class="btn">Descargar Historial de Registros</a>
 </div> <br>

@@ -61,6 +61,9 @@ $conn->close();
     <title>Registro de Entrada</title>
 </head>
 <body>
+<a href="javascript:history.back()" class="back-arrow">
+    <i class="bx bx-left-arrow-alt"></i>
+</a>
     <div class="container-form register">
         <div class="information">
             <div class="info-childs">

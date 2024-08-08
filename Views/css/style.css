@@ -64,7 +64,7 @@
 
 .info-childs input:hover {
     background-color: #9191bd;
-    border: none;
+    /* border: none; */
     color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 }
@@ -217,10 +217,28 @@ input[type="submit"]:hover {
 .perfil-label select {
     margin-left: 10px;
     padding: 10px;
-    border: none;
     border-radius: 20px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
     cursor: pointer;
+}
+
+.back-arrow {
+    position: absolute;
+    top: 10px; /* Ajusta este valor según sea necesario */
+    left: 10px; /* Ajusta este valor según sea necesario */
+    font-size: 24px;
+    color: #000; /* Cambia el color según tus necesidades */
+    text-decoration: none;
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+
+.admin-link{
+    color: #000;
+}
+
+.admin-link:hover{
+    color: #5a54e3;
 }
 

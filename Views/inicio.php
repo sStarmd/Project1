@@ -23,7 +23,8 @@ unset($_SESSION['error']);
             <div class="info-childs">
                 <h2>¡Hola nuevamente!</h2>
                 <p>Para iniciar sesión necesitas tener una cuenta.</p>
-                <input type="button" value="Registrarse" id="sign-up" />
+                <input type="button" value="Registrarse" id="sign-up" /> <br> <br>
+                <a href="admin_login.php" class="admin-link">Entrar como administrador</a>
             </div>
         </div>
         <div class="form-information">
