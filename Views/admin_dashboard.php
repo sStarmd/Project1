@@ -34,6 +34,7 @@ while ($row = $result->fetch_assoc()) {
     <meta charset="UTF-8">
     <title>Panel de Administración</title>
     <link rel="stylesheet" href="css/admin-dashboard.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
 
@@ -42,7 +43,7 @@ while ($row = $result->fetch_assoc()) {
             <img src="img/logoSena.png" alt="Logo">
         </div>
         <h1>Panel de Administración</h1>
-        <a href="admin_logout.php" class="logout-button">Cerrar sesión</a>
+        <a href="admin_logout.php" class="btn btn-outline-secondary">Cerrar sesión</a>
     </header>
 
 
@@ -69,8 +70,9 @@ while ($row = $result->fetch_assoc()) {
             <td><?php echo $ambiente['nombre_ambiente']; ?></td>
             <td><?php echo $ambiente['disponible'] ? 'Sí' : 'No'; ?></td>
             <td>
-                <a class="btn-edit" href="admin_edit_ambiente.php?id=<?php echo $ambiente['Id_ambiente']; ?>">Editar</a>
-                <a class="btn-delete"   href="admin_delete_ambiente.php?id=<?php echo $ambiente['Id_ambiente']; ?>">Eliminar</a>
+            <a class="btn btn-outline-success" href="admin_edit_ambiente.php?id=<?php echo $ambiente['Id_ambiente']; ?>">Editar</a>
+            <a class="btn btn-outline-danger" href="admin_delete_ambiente.php?id=<?php echo $ambiente['Id_ambiente']; ?>">Eliminar</a>
+
             </td>
         </tr>
         <?php endforeach; ?>

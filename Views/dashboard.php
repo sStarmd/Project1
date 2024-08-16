@@ -33,7 +33,7 @@ $ambientes = $result->fetch_all(MYSQLI_ASSOC);
             <img src="img/logoSena.png" alt="Logo"> 
         </div>
         <div class="header-btn">
-        <a class="header-btn_help" href="https://w.app/j1kBuZ" target="_blank"><i class="fab fa-github"></i>¡EMERGENCIA!</a>
+        <a class="header-btn_help" href="https://wa.link/wmifyd" target="_blank"><i class="fab fa-github"></i>¡EMERGENCIA!</a>
             <a class="header-btn_logout" href="../php/logout.php">CERRAR SESION</a>
         </div>
     </header>

@@ -39,6 +39,7 @@ unset($_SESSION['error']);
                         <i class="bx bx-lock-open"></i>
                         <input type="password" placeholder="Contraseña" id="contraseña" name="contraseña" required />
                     </label>
+                    <a href="recuperar_contraseña.php" class="admin-link">Recuperar contraseña</a>
                     <input type="submit" value="Iniciar Sesión" />
                     <?php if ($error): ?>
                     <div class="error-message"><?php echo $error; ?></div>
