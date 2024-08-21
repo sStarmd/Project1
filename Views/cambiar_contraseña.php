@@ -1,4 +1,5 @@
 <?php
+$message = ""; // Inicializar la variable del mensaje
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $token = $_POST['token'];
     $nueva_contraseña = $_POST['nueva_contraseña'];
@@ -21,12 +22,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $conn->prepare("UPDATE usuarios SET contraseña = ?, token = NULL, token_expira = NULL WHERE id_usuario = ?");
         $stmt->bind_param('si', $hashed_password, $id_usuario);
         if ($stmt->execute()) {
-            echo "Tu contraseña ha sido cambiada exitosamente.";
+            $message = "Tu contraseña ha sido cambiada exitosamente.";
         } else {
-            echo "Hubo un error al cambiar tu contraseña. Inténtalo de nuevo.";
+            $message = "Hubo un error al cambiar tu contraseña. Inténtalo de nuevo.";
         }
     } else {
-        echo "Token inválido o expirado.";
+        $message = "Token inválido o expirado.";
     }
 } else {
     $token = $_GET['token'];
@@ -37,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/contraseña.css" />
     <title>Cambiar Contraseña</title>
 </head>
 <body>
@@ -44,7 +46,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="hidden" name="token" value="<?php echo htmlspecialchars($token); ?>">
         <label for="nueva_contraseña">Nueva Contraseña:</label>
         <input type="password" name="nueva_contraseña" required>
-        <input type="submit" value="Cambiar Contraseña">
+
+        <!-- Mostrar mensaje aquí -->
+        <?php if (!empty($message)): ?>
+            <div class="message"><?php echo $message; ?></div>
+        <?php endif; ?>
+
+      <input type="submit" value="Cambiar Contraseña">
+
+        <div class="centered-container">
+          <a href="inicio.php" class="button">Volver a Inicio</a>
+        </di>
+
+    </form>
+
     </form>
 </body>
 </html>

@@ -1,4 +1,6 @@
 <?php
+$message = '';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = $_POST['correo'];
 
@@ -37,12 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->Subject = 'Recuperar contraseña';
             $mail->Body = "Para recuperar tu contraseña, haz clic en el siguiente enlace: <a href='http://localhost/Proyecto_version_final/Views/cambiar_contrase%C3%B1a.php?token=$token'>Recuperar contraseña</a>";
             $mail->send();
-            echo "Revisa tu correo para continuar con la recuperación de la contraseña.";
+            $message = "Revisa tu correo para continuar con la recuperación de la contraseña.";
         } catch (Exception $e) {
-            echo "No se pudo enviar el correo. Error: {$mail->ErrorInfo}";
+            $message = "No se pudo enviar el correo. Error: {$mail->ErrorInfo}";
         }
     } else {
-        echo "No se encontró una cuenta asociada a este correo.";
+        $message = "No se encontró una cuenta asociada a este correo.";
     }
 }
 ?>
@@ -51,13 +53,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/contraseña.css" />
     <title>Recuperar Contraseña</title>
 </head>
 <body>
-    <form action="" method="post">
-        <label for="correo">Introduce tu correo electrónico:</label>
-        <input type="email" name="correo" required>
-        <input type="submit" value="Enviar correo de recuperación">
-    </form>
+    <div class="form-container">
+        <form action="" method="post">
+            <label for="correo">Introduce tu correo electrónico:</label><br>
+            <input type="email" name="correo" required>
+            <?php
+         if ($message) {
+            echo "<p class='message'>$message</p>";
+         }
+         ?>
+            <input type="submit" value="Enviar correo de recuperación">
+        </form>
+       
+    </div>
 </body>
 </html>
