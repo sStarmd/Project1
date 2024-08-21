@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../config/Database.php';
+require_once '../config/Database.php'; // Incluye la conexión a la base de datos
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $correo = $_POST['correo'];
@@ -39,7 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <meta charset="UTF-8">
         <title>Login Administrador</title>
         <link rel="stylesheet" href="css/admin-login.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
     </head>
     <body>
     <div class="container-form admin-login">
@@ -49,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <p>Debes iniciar sesión para acceder al panel de administración.</p>
             </div>
         </div>
+        <!-- formulario para iniciar sesion como administrador -->
         <div class="form-information">
             <div class="form-information-childs">
                 <h2>Inicia sesion como Administrador</h2>
@@ -62,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </label>
                     <div class="btn">
                         <input type="submit" value="Entrar">
+                        <!-- Enlace a inicio -->
                         <a href="inicio.php">Volver al Inicio</a>
                     </div>
                 </form>

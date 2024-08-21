@@ -1,3 +1,4 @@
+/* Reset de márgenes y paddings, fuente por defecto */
 * {
    padding: 0;
    margin: 0;
@@ -5,6 +6,7 @@
    font-family: 'Montserrat', sans-serif;
 }
 
+/* Estilo general del cuerpo */
 body {
    background-color: #f8f8f8;
    display: flex;
@@ -12,6 +14,7 @@ body {
    align-items: center;
 }
 
+/* Encabezado de administrador */
 .admin-header {
    display: flex;
    justify-content: space-between;
@@ -36,6 +39,7 @@ header img{
    margin: 0;
 }
 
+/* Botón de cierre de sesión */
 .logout-button {
    background-color: #9191bd;
    color: #ffffff;
@@ -57,7 +61,7 @@ header img{
    font-size: 18px;
 } */
 
-
+/* Títulos */
 h1, h2 {
    color: #333;
    margin-bottom: 10px;
@@ -69,6 +73,7 @@ h1, h2 {
    margin-bottom: 30px;
 }
 
+/* Botones dentro de .btn-2 */
 .btn-2 a {
    background-color: #9191bd;
    color: #fff;
@@ -89,7 +94,7 @@ h1, h2 {
    color: #333;
 }
 
-
+/* Estilo de tablas */
 table {
    width: 100%;
    max-width: 1200px;
@@ -120,6 +125,7 @@ table tr:hover {
    background-color: #e9e9e9;
 }
 
+/* Botones de eliminar y editar en la tabla */
 table td .btn-delete {
    background-color: rgb(209, 61, 61);
    padding: 3px 15px;
@@ -172,7 +178,7 @@ button:hover, .button:hover {
    background-color: #000000;
 }
 
-
+/* Estilo del pie de página */
 footer {
    background-color: #333;
    color: #fff;

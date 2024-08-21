@@ -1,3 +1,4 @@
+/* Estilo global */
 * {
     padding: 0;
     margin: 0;
@@ -14,7 +15,7 @@
     /* background: url('../img/fondo.jpg') no-repeat center center fixed; Ruta ajustada */
     background-size: cover; /* Asegurar que la imagen cubra toda la pantalla */
   }
-  
+  /* Contenedor del formulario */
   .container-form {
     display: flex;
     border-radius: 20px;
@@ -24,7 +25,7 @@
     transition: all 1s ease;
     margin: 10px;
 }
-
+/* Sección de información */
 .information {
     width: 50%;
     display: flex;
@@ -68,7 +69,7 @@
     color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 }
-
+/* Sección del formulario */
 .form-information {
     display: flex;
     align-items: center;
@@ -140,7 +141,7 @@
     position: absolute;
     transform: translateY(-300%);
 }
-
+/* Estilo responsivo */
 @media screen and (max-width:750px) {
     html {
         font-size: 12px;
@@ -174,7 +175,7 @@
         border-top-right-radius: 0;
     }
 }
-
+/* Estilo de formularios generales */
 input[type="text"], input[type="email"], input[type="password"], select, textarea {
     width: 100%;
     padding: 10px;
@@ -208,7 +209,7 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #5a54e3;
 }
-
+/* Etiqueta de perfil */
 .perfil-label {
     display: flex;
     align-items: center;
@@ -222,7 +223,7 @@ input[type="submit"]:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
     cursor: pointer;
 }
-
+/* Flecha de retroceso */
 .back-arrow {
     position: absolute;
     top: 10px; /* Ajusta este valor según sea necesario */

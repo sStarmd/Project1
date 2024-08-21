@@ -1,13 +1,13 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin_id'])) {
+if (!isset($_SESSION['admin_id'])) { // Verifica si el admin está autenticado
     header("Location: admin_login.php");
     exit();
 }
 
-require_once '../config/Database.php';
+require_once '../config/Database.php'; // Conecta a la base de datos
 
-$id = $_GET['id'];
+$id = $_GET['id']; // Obtiene el ID del ambiente
 
 $db = new Database();
 $conn = $db->getConnection();
@@ -17,6 +17,7 @@ $stmt = $conn->prepare($query);
 $stmt->bind_param("i", $id);
 $stmt->execute();
 $result = $stmt->get_result();
+// Obtiene los datos del ambiente
 $ambiente = $result->fetch_assoc();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -27,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt = $conn->prepare($query);
     $stmt->bind_param("sii", $nombre, $disponible, $id);
     $stmt->execute();
-
+// Redirige al dashboard
     header("Location: admin_dashboard.php");
     exit();
 }
@@ -41,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="css/style3.css">
 </head>
 <body>
+    <!-- opcion para editar -->
     <h1>Editar Ambiente</h1>
     <form method="post" action="admin_edit_ambiente.php?id=<?php echo $id; ?>">
         <label for="nombre">Nombre del Ambiente:</label>

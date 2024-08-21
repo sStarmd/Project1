@@ -8,7 +8,7 @@ body {
     font-size: large;
     
 }
-
+/* Contenedores de formulario y administración */
 .container-form, .admin-container {
     width: 80%;
     max-width: 800px;
@@ -18,7 +18,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+/* Estilos para encabezados */
 h1, h2 {
     color: #333;
 }
@@ -32,7 +32,7 @@ h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
 }
-
+/* Estilos para formularios */
 form {
     display: flex;
     flex-direction: column;
@@ -65,7 +65,7 @@ input[type="submit"], button {
 input[type="submit"]:hover, button:hover {
     background-color: #0056b3;
 }
-
+/* Estilos para enlaces */
 a {
     color: #007bff;
     text-decoration: none;
@@ -154,7 +154,7 @@ a:hover {
     background-color: #0056b3;
 }
 
-/* ESTILO AL LOGIN .ADMIN */
+/* Estilos adicionales para el login del administrador */
 .adminLogin{
     width: 50%;
     height: 50%;

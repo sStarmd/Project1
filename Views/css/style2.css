@@ -2,31 +2,31 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #F5F5F5;
-    font-family: 'Montserrat', sans-serif;
+    background-color: #F5F5F5; /* Color de fondo */
+    font-family: 'Montserrat', sans-serif; /* Tipografía principal */
 }
-
+/* Estilos para la cabecera */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #D4EBCE;;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2); /* Sombra en la cabecera */
 }
 
 .logo img{
     padding-left: 15px;
-    width: 100px;
-    height: 100px;
+    width: 100px; /* Ancho de la imagen del logo */
+    height: 100px; /* Ancho de la imagen del logo */
 }
-
+/* Botones en la cabecera */
 .header-btn_help{
-    background-color: #9191bd;
+    background-color: #9191bd;  /* Color de fondo del botón de ayuda */
     margin: 20px;
     padding: 20px 25px;
     font-size: 16px;
     text-decoration: none;
-    color: #fff;
+    color: #fff; /* Color del texto del botón */
     font-weight: bold;
     border-radius: 10px;
     box-shadow: 0 0 20px 0 #6a6ab4;
@@ -35,9 +35,9 @@ header {
     transition-property: all;
 }
 .header-btn_help:hover{
-    background-color: #6a6ab4;
+    background-color: #6a6ab4; /* Color de fondo al pasar el mouse */
 }
-
+/* Estilos responsivos */
 .header-btn_logout {
     background-color: #8e8c8c;
     margin: 20px;
@@ -52,11 +52,12 @@ header {
     transition-property: background-color, font-size;
     transition-property: all;
 }
+
 .header-btn_logout:hover{
     background-color: #636363;
    
 }
-
+/* Estilos responsivos */
 @media (max-width: 575px) {
     .header-btn_help{
         font-size: 10px;
@@ -82,7 +83,7 @@ header {
         
     }
 }
-
+/* Texto de bienvenida */
 .bienvenida span{
     background-color: #9191bd;
     color: #fff;
@@ -92,21 +93,21 @@ header {
     box-shadow: 0 0 8px #9191bd; ;
    
 }
-
+/* Encabezados */
 h1 {
     margin: 0;
     text-align: center; 
     color: #333;
     font-size: 44px;
 }
-
+/* Secciones del contenido principal */
 main {
     display: flex;
     flex-wrap: wrap; 
     justify-content: flex-start; 
     overflow: hidden; 
 }
-
+/* Secciones del contenido principal */
 .seccion-izquierda,
 .seccion-derecha {
     flex: 1; /* Ajusta el tamaño de las secciones */
@@ -122,7 +123,7 @@ main {
 .seccion-izquierda span {
     font-size: 50px;
 }
-
+/* Estilos de los botones */
 .btn-1{
     margin-top: 15px;
 }
@@ -154,7 +155,7 @@ main {
     }
 }
 
-
+/* Estilos para botones generales */
 .boton {
     display: inline-block;
     background-color: #9191bd;
@@ -252,6 +253,7 @@ span {
     background-color: #a1a1ce;
 
 }
+/* Estilos para diferentes estados de ocupación */
 .ocupado {
     background-color: #9191bd;
     color: white;
@@ -278,33 +280,33 @@ span {
     background-color: #b0d7ac;
 }
 
-
+/* Estilos para el pie de página */
 footer {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
     text-align: center;
 }
-
+/* Contenedor del pie de página */
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     align-items: center;
 }
-
+/* Contenido del pie de página */
 .footer-content {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
+/* Logo en el pie de página */
 .footer-logo img {
     width: 120px;
     margin-bottom: 10px;
 }
-
+/* Enlaces del pie de página */
 .footer-links, .footer-social {
     display: flex;
     flex-direction: column;

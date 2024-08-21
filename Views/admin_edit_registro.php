@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin_id'])) {
-    header("Location: admin_login.php");
+if (!isset($_SESSION['admin_id'])) { // Verifica si el usuario es administrador
+    header("Location: admin_login.php"); // Redirige al login si no está autenticado
     exit();
 }
 
@@ -13,6 +13,7 @@ $db = new Database();
 $conn = $db->getConnection();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+// Actualiza el registro con los datos enviados
     $fecha_hora_entrada = $_POST['fecha_hora_entrada'];
     $nombre_completo_sale = $_POST['nombre_completo_sale'];
     $nombre_completo_entra = $_POST['nombre_completo_entra'];
@@ -60,6 +61,7 @@ $ambientes = $conn->query("SELECT * FROM ambientes")->fetch_all(MYSQLI_ASSOC);
 <body>
     <h1>Editar Registro de Entrada</h1>
     <form method="post" action="admin_edit_registro.php?id=<?php echo $id; ?>">
+        <!-- Formulario para editar el registro -->
         <label for="fecha_hora_entrada">Fecha y Hora:</label>
         <input type="datetime-local" id="fecha_hora_entrada" name="fecha_hora_entrada" value="<?php echo date('Y-m-d\TH:i', strtotime($registro['fecha_hora_entrada'])); ?>" required>
 

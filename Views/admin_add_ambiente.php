@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt = $conn->prepare($query);
     $stmt->bind_param("si", $nombre, $disponible);
     $stmt->execute();
-
+// Redirige al panel de administración
     header("Location: admin_dashboard.php");
     exit();
 }
