@@ -124,8 +124,8 @@ while ($row = $result->fetch_assoc()) {
                 </div>
                 <div class="footer-contact">
                     <p>Cl. 2 #13 - 3, Villeta, Cundinamarca
-                    SENA, CDAE Villeta, dirección</p>
-                    <p>Teléfono: </p>
+                    SENA, CDAE Villeta</p>
+                    <p>Teléfono: +(57) 601 7366060 </p>
                 </div>
             </div>
         </div>
