@@ -21,15 +21,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             // Configuración del servidor
             $mail->isSMTP();
-            $mail->Host = 'in-v3.mailjet.com'; // Cambiar por tu servidor SMTP
+            $mail->Host = ''; // Cambiar por tu servidor SMTP
             $mail->SMTPAuth = true;
-            $mail->Username = '59365fee844ceeefbb57eb6e83f660bc'; //API
-            $mail->Password = '0f3cab6abeb56096d4db086bf70f11d3'; // CLAVE SECRETA
+            $mail->Username = ''; //API
+            $mail->Password = ''; // CLAVE SECRETA
             $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
             // Destinatario
-            $mail->setFrom('moi7548@gmail.com', 'Starmd');
+            $mail->setFrom('', '');
             $mail->addAddress($correo);
 
             // Contenido del correo
